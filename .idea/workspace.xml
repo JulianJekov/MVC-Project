@@ -5,11 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e66d1978-c638-472d-8e41-48c59a0f4f81" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/softuni/workshop/config/ApplicationBeanConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/softuni/workshop/config/ApplicationBeanConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/softuni/workshop/data/entities/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/softuni/workshop/data/entities/BaseEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/softuni/workshop/data/entities/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/softuni/workshop/data/entities/Company.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/softuni/workshop/data/entities/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/softuni/workshop/data/entities/Employee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/softuni/workshop/data/entities/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/softuni/workshop/data/entities/Project.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/softuni/workshop/util/XmlParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/softuni/workshop/util/XmlParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/softuni/workshop/util/XmlParserImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/softuni/workshop/util/XmlParserImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/softuni/workshop/data/entities/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/softuni/workshop/data/entities/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/softuni/workshop/data/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/softuni/workshop/data/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/softuni/workshop/data/repositories/CompanyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/softuni/workshop/data/repositories/CompanyRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/softuni/workshop/data/repositories/EmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/softuni/workshop/data/repositories/EmployeeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/softuni/workshop/data/repositories/ProjectRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/softuni/workshop/data/repositories/ProjectRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/softuni/workshop/data/repositories/RoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/softuni/workshop/data/repositories/RoleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/softuni/workshop/data/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/softuni/workshop/data/repositories/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/softuni/workshop/web/controllers/BaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/softuni/workshop/web/controllers/BaseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/softuni/workshop/web/controllers/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/softuni/workshop/web/controllers/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/softuni/workshop/web/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/softuni/workshop/web/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/softuni/workshop/web/models/UserRegisterModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/softuni/workshop/web/models/UserRegisterModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/softuni/workshop/WorkshopApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/softuni/workshop/WorkshopApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,9 +47,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2dupOldDWGDC7bWOMS7d5L86Q6t" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -40,8 +57,14 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.WorkshopApplication.executor": "Debug",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "E:/Java/Java/JavaDB/Spring Data/ExamPrep/Java DB Spring Data Retake Exam - 13 August 2023",
@@ -50,7 +73,15 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
@@ -84,8 +115,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-16.0.2-corretto-16.0.2-f644763e9732-d10d28c9" />
-        <option value="jdk-21.0.2-openjdk-21.0.2-f644763e9732-c0c073db" />
+        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
       </set>
     </attachedChunks>
   </component>
@@ -98,6 +128,8 @@
       <option name="presentableId" value="Default" />
       <updated>1710867788595</updated>
       <workItem from="1710867789183" duration="2709000" />
+      <workItem from="1710870591795" duration="6006000" />
+      <workItem from="1710877312281" duration="4878000" />
     </task>
     <servers />
   </component>

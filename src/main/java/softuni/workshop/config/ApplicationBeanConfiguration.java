@@ -29,6 +29,7 @@ public class ApplicationBeanConfiguration {
         return new XmlParserImpl();
     }
 
+    @Bean
     public ValidatorUtil validatorUtil () {
         return new ValidatorUtilImpl();
     }
