@@ -1,11 +1,24 @@
 package softuni.workshop.service.services.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import softuni.workshop.constants.Paths;
+import softuni.workshop.data.repositories.EmployeeRepository;
 import softuni.workshop.service.services.EmployeeService;
+
+import java.io.IOException;
+import java.nio.file.Files;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
 
+    private final EmployeeRepository employeeRepository;
+
+
+    @Autowired
+    public EmployeeServiceImpl(EmployeeRepository employeeRepository) {
+        this.employeeRepository = employeeRepository;
+    }
 
     @Override
     public void importEmployees() {
@@ -14,14 +27,13 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public boolean areImported() {
-        //TODO check if repository has any records
-       return true;
+        return this.employeeRepository.count() > 0;
     }
 
     @Override
-    public String readEmployeesXmlFile() {
-        //TODO read xml file
-        return null;
+    public String readEmployeesXmlFile() throws IOException {
+
+        return Files.readString(Paths.EMPLOYEES_XML_PATH);
     }
 
     @Override

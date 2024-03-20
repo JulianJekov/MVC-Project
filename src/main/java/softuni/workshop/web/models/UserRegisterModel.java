@@ -1,13 +1,20 @@
 package softuni.workshop.web.models;
 
+import javax.persistence.UniqueConstraint;
+import javax.validation.constraints.NotBlank;
+
 public class UserRegisterModel {
 
+    @NotBlank
     private String username;
 
+    @NotBlank
     private String password;
 
+    @NotBlank
     private String confirmPassword;
 
+    @NotBlank
     private String email;
 
     public UserRegisterModel() {

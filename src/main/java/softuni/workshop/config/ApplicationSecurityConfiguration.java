@@ -30,4 +30,6 @@ public class ApplicationSecurityConfiguration extends WebSecurityConfigurerAdapt
             .logout()
             .logoutSuccessUrl("/");
     }
+
+
 }
