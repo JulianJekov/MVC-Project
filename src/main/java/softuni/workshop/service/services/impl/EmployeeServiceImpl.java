@@ -1,11 +1,14 @@
 package softuni.workshop.service.services.impl;
 
 import org.modelmapper.ModelMapper;
+import org.modelmapper.PropertyMap;
+import org.modelmapper.TypeMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import softuni.workshop.constants.Paths;
 import softuni.workshop.data.dtos.Employee.EmployeeImportDto;
 import softuni.workshop.data.dtos.Employee.EmployeeRootDto;
+import softuni.workshop.data.dtos.Employee.EmployeeViewDto;
 import softuni.workshop.data.entities.Employee;
 import softuni.workshop.data.repositories.EmployeeRepository;
 import softuni.workshop.data.repositories.ProjectRepository;
@@ -16,6 +19,7 @@ import javax.xml.bind.JAXBException;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.util.stream.Collectors;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
@@ -61,7 +65,11 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public String exportEmployeesWithAgeAbove() {
-        //TODO export employees with age above 25
-        return null;
+        
+        return this.employeeRepository.findByAgeGreaterThan(25)
+                .stream()
+                .map(e -> this.modelMapper.map(e, EmployeeViewDto.class))
+                .map(EmployeeViewDto::toString)
+                .collect(Collectors.joining("\n"));
     }
 }

@@ -24,6 +24,9 @@ public class Employee extends BaseEntity{
     public Employee() {
     }
 
+
+
+
     public String getFirstName() {
         return firstName;
     }

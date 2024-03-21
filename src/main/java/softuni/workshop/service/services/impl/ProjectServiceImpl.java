@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import softuni.workshop.constants.Paths;
 import softuni.workshop.data.dtos.Project.ProjectImportDto;
 import softuni.workshop.data.dtos.Project.ProjectRootDto;
+import softuni.workshop.data.dtos.Project.ProjectViewDto;
 import softuni.workshop.data.entities.Company;
 import softuni.workshop.data.entities.Project;
 import softuni.workshop.data.repositories.CompanyRepository;
@@ -16,6 +17,8 @@ import softuni.workshop.util.XmlParser;
 import javax.xml.bind.JAXBException;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 
 @Service
@@ -74,7 +77,10 @@ public class ProjectServiceImpl implements ProjectService {
 
     @Override
     public String exportFinishedProjects() {
-        //TODO export finished projects
-        return null;
+        return this.projectRepository.findByIsFinishedTrue()
+                .stream()
+                .map(p -> modelMapper.map(p, ProjectViewDto.class))
+                .map(ProjectViewDto::toString)
+                .collect(Collectors.joining("\n"));
     }
 }
