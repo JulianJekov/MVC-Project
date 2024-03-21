@@ -13,7 +13,7 @@ import softuni.workshop.web.models.UserRegisterModel;
 import javax.validation.Valid;
 
 @Controller
-//@RequestMapping("users")
+@RequestMapping("users")
 public class UserController extends BaseController {
 
     private final UserService userService;
@@ -24,23 +24,23 @@ public class UserController extends BaseController {
         this.userService = userService;
     }
 
-    @GetMapping("users/register")
+    @GetMapping("/register")
     public ModelAndView register () {
 
         return new ModelAndView("/user/register", "title", "Register");
     }
 
-    @GetMapping("users/login")
+    @GetMapping("/login")
     public ModelAndView login () {
         return new ModelAndView("/user/login", "title", "Login");
     }
 
-    @PostMapping("users/register")
+    @PostMapping("/register")
     public ModelAndView registerConfirm(@ModelAttribute @Valid UserRegisterModel userRegisterModel) {
 
         if (!userRegisterModel.getPassword().equals(userRegisterModel.getConfirmPassword())) {
             //todo return an exception and handle it
-//            return new ModelAndView("redirect:/users/register");
+            return new ModelAndView("redirect:/users/register");
         }
 
         this.userService.registerUser(userRegisterModel);

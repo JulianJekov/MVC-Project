@@ -1,4 +1,4 @@
-package softuni.workshop.data.dtos;
+package softuni.workshop.data.dtos.Company;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -11,16 +11,16 @@ import java.util.Set;
 public class CompanyRootDto {
 
     @XmlElement(name = "company")
-    private CompanyImportDto company;
+    private Set<CompanyImportDto> company;
 
     public CompanyRootDto() {
     }
 
-    public CompanyImportDto getCompany() {
+    public Set<CompanyImportDto> getCompany() {
         return company;
     }
 
-    public void setCompany(CompanyImportDto company) {
+    public void setCompany(Set<CompanyImportDto> company) {
         this.company = company;
     }
 }

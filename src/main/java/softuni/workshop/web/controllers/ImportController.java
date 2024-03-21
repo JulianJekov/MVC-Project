@@ -11,10 +11,11 @@ import softuni.workshop.service.services.EmployeeService;
 import softuni.workshop.service.services.ProjectService;
 
 import javax.xml.bind.JAXBException;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 @Controller
-@RequestMapping("/import")
+@RequestMapping("import")
 public class ImportController extends BaseController {
 
     private final CompanyService companyService;
@@ -48,11 +49,22 @@ public class ImportController extends BaseController {
         return modelAndView;
     }
 
+    @PostMapping("/companies")
+    public ModelAndView importCompanies () throws JAXBException, FileNotFoundException {
+        this.companyService.importCompanies();
+        return new ModelAndView("redirect:/import/xml");
+    }
+
     @GetMapping("/employees")
     public ModelAndView employees() throws IOException {
         ModelAndView modelAndView = new ModelAndView("xml/import-employees");
         modelAndView.addObject("employees", this.employeeService.readEmployeesXmlFile());
         return modelAndView;
+    }
+    @PostMapping("/employees")
+    public ModelAndView importEmployee() throws JAXBException, FileNotFoundException {
+        this.employeeService.importEmployees();
+        return new ModelAndView("redirect:/import/xml");
     }
 
     @GetMapping("/projects")
@@ -61,10 +73,9 @@ public class ImportController extends BaseController {
         modelAndView.addObject("projects", this.projectService.readProjectsXmlFile());
         return modelAndView;
     }
-
-    @PostMapping("/employees")
-
-    public ModelAndView importEmployee() {
-        return new ModelAndView("xml/import-xml");
+    @PostMapping("/projects")
+    public ModelAndView importProjects () throws JAXBException, IOException {
+        this.projectService.importProjects();
+        return new ModelAndView("redirect:/import/xml");
     }
 }

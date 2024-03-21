@@ -34,4 +34,6 @@ public class Company extends BaseEntity{
     public void setProjects(Set<Project> projects) {
         this.projects = projects;
     }
+
+
 }

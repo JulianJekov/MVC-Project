@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public interface CompanyService {
 
-    void importCompanies();
+    void importCompanies() throws JAXBException, FileNotFoundException;
 
     boolean areImported();
 

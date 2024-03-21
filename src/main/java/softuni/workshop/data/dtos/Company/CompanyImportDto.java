@@ -1,9 +1,9 @@
-package softuni.workshop.data.dtos;
+package softuni.workshop.data.dtos.Company;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
+
 
 @XmlAccessorType(XmlAccessType.FIELD)
 public class CompanyImportDto {

@@ -1,8 +1,11 @@
 package softuni.workshop.service.services.impl;
+
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import softuni.workshop.constants.Paths;
-import softuni.workshop.data.dtos.CompanyRootDto;
+import softuni.workshop.data.dtos.Company.CompanyRootDto;
+import softuni.workshop.data.entities.Company;
 import softuni.workshop.data.repositories.CompanyRepository;
 import softuni.workshop.service.services.CompanyService;
 import softuni.workshop.util.XmlParser;
@@ -17,22 +20,30 @@ public class CompanyServiceImpl implements CompanyService {
 
     private final CompanyRepository companyRepository;
     private final XmlParser xmlParser;
+    private final ModelMapper modelMapper;
 
 
     @Autowired
-    public CompanyServiceImpl(CompanyRepository companyRepository, XmlParser xmlParser) {
+    public CompanyServiceImpl(CompanyRepository companyRepository, XmlParser xmlParser, ModelMapper modelMapper) {
         this.companyRepository = companyRepository;
         this.xmlParser = xmlParser;
+        this.modelMapper = modelMapper;
     }
 
     @Override
-    public void importCompanies() {
-        //TODO seed in database
+    public void importCompanies() throws JAXBException, FileNotFoundException {
+        String xml = Paths.COMPANIES_XML_PATH.toAbsolutePath().toString();
+
+        CompanyRootDto companyRootDto = xmlParser.convertFromFile(xml, CompanyRootDto.class);
+
+        companyRootDto.getCompany()
+                .stream()
+                .map(c -> modelMapper.map(c, Company.class))
+                .forEach(this.companyRepository::saveAndFlush);
     }
 
     @Override
     public boolean areImported() {
-
         return this.companyRepository.count() > 0;
     }
 
