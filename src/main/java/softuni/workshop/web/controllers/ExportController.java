@@ -23,16 +23,16 @@ public class ExportController extends BaseController {
 
     @GetMapping("/project-if-finished")
     public ModelAndView exportProjects () {
-        ModelAndView modelAndView = new ModelAndView("export/export-project-if-finished");
-        String exportedProjects = this.projectService.exportFinishedProjects();
+        final ModelAndView modelAndView = new ModelAndView("export/export-project-if-finished");
+        final String exportedProjects = this.projectService.exportFinishedProjects();
         modelAndView.addObject("projectsIfFinished", exportedProjects);
         return modelAndView;
     }
 
     @GetMapping("/employees-above")
     public ModelAndView exportEmployees () {
-        ModelAndView modelAndView = new ModelAndView("export/export-employees-with-age");
-        String exportedEmployees = this.employeeService.exportEmployeesWithAgeAbove();
+        final ModelAndView modelAndView = new ModelAndView("export/export-employees-with-age");
+        final String exportedEmployees = this.employeeService.exportEmployeesWithAgeAbove();
         modelAndView.addObject("employeesAbove", exportedEmployees);
         return modelAndView;
     }

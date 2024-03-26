@@ -24,8 +24,8 @@ public class RoleServiceImpl implements RoleService {
     @Override
     public void seedRolesInDb() {
         if(this.roleRepository.count() == 0) {
-            Role admin = new Role("ADMIN");
-            Role user = new Role("USER");
+            final Role admin = new Role("ADMIN");
+            final Role user = new Role("USER");
 
             this.roleRepository.save(admin);
             this.roleRepository.save(user);

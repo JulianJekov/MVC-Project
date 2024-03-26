@@ -36,7 +36,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserServiceModel registerUser(UserRegisterModel userRegisterModel) {
 
-        User user = this.modelMapper.map(userRegisterModel, User.class);
+        final User user = this.modelMapper.map(userRegisterModel, User.class);
 
         if (this.userRepository.count() == 0) {
 
@@ -51,6 +51,7 @@ public class UserServiceImpl implements UserService {
             user.setAuthorities(new HashSet<>());
             user.getAuthorities().add(this.modelMapper.map(this.roleService.findByAuthority("USER"), Role.class));
         }
+
         String encodePass = this.bCryptPasswordEncoder.encode(userRegisterModel.getPassword());
         user.setPassword(encodePass);
 

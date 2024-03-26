@@ -32,12 +32,12 @@ public class ImportController extends BaseController {
 
     @GetMapping("/xml")
     public ModelAndView xmls() {
-        boolean[] areImported = new boolean[] {
+        final boolean[] areImported = new boolean[] {
                 this.companyService.areImported(),
                 this.projectService.areImported(),
                 this.employeeService.areImported()
         };
-        ModelAndView modelAndView = new ModelAndView("xml/import-xml");
+        final ModelAndView modelAndView = new ModelAndView("xml/import-xml");
         modelAndView.addObject("areImported", areImported);
         return  modelAndView;
     }

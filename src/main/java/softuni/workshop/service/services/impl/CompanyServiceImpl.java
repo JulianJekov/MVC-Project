@@ -32,13 +32,13 @@ public class CompanyServiceImpl implements CompanyService {
 
     @Override
     public void importCompanies() throws JAXBException, FileNotFoundException {
-        String xml = Paths.COMPANIES_XML_PATH.toAbsolutePath().toString();
+        final String xml = Paths.COMPANIES_XML_PATH.toAbsolutePath().toString();
 
-        CompanyRootDto companyRootDto = xmlParser.convertFromFile(xml, CompanyRootDto.class);
+        final CompanyRootDto companyRootDto = xmlParser.convertFromFile(xml, CompanyRootDto.class);
 
         companyRootDto.getCompany()
                 .stream()
-                .map(c -> modelMapper.map(c, Company.class))
+                .map(c ->this.modelMapper.map(c, Company.class))
                 .forEach(this.companyRepository::saveAndFlush);
     }
 

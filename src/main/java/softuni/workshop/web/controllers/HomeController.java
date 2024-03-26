@@ -28,9 +28,9 @@ public class HomeController extends BaseController {
 
     @GetMapping("/home")
     public ModelAndView home () {
-        ModelAndView modelAndView = new ModelAndView("home");
+        final ModelAndView modelAndView = new ModelAndView("home");
 
-        boolean areImported =
+        final boolean areImported =
                 this.companyService.areImported()
                 && this.employeeService.areImported()
                 && this.projectService.areImported();

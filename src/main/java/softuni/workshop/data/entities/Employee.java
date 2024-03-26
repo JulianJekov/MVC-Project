@@ -25,8 +25,6 @@ public class Employee extends BaseEntity{
     }
 
 
-
-
     public String getFirstName() {
         return firstName;
     }

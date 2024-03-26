@@ -17,9 +17,7 @@ import softuni.workshop.util.XmlParser;
 import javax.xml.bind.JAXBException;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.util.Set;
 import java.util.stream.Collectors;
-
 
 @Service
 public class ProjectServiceImpl implements ProjectService {
@@ -41,13 +39,13 @@ public class ProjectServiceImpl implements ProjectService {
 
     @Override
     public void importProjects() throws IOException, JAXBException {
-        String xml = Paths.PROJECTS_XML_PATH.toAbsolutePath().toString();
-        ProjectRootDto projectRootDto = xmlParser.convertFromFile(xml, ProjectRootDto.class);
-        System.out.println();
+        final String xml = Paths.PROJECTS_XML_PATH.toAbsolutePath().toString();
+        final ProjectRootDto projectRootDto = xmlParser.convertFromFile(xml, ProjectRootDto.class);
 
         for (ProjectImportDto projectImportDto : projectRootDto.getProjects()) {
-            Project project = modelMapper.map(projectImportDto, Project.class);
-            project.setCompany(this.companyRepository.findByName(projectImportDto.getCompanyName().getName()));
+            final Project project = modelMapper.map(projectImportDto, Project.class);
+            final Company company = this.companyRepository.findByName(projectImportDto.getCompanyName().getName());
+            project.setCompany(company);
             this.projectRepository.saveAndFlush(project);
         }
 
@@ -59,10 +57,6 @@ public class ProjectServiceImpl implements ProjectService {
 //                    return project;
 //                })
 //                .forEach(this.projectRepository::saveAndFlush);
-    }
-
-    private Company setCompany(ProjectImportDto dto) {
-        return this.companyRepository.findByName(dto.getCompanyName().getName());
     }
 
     @Override
